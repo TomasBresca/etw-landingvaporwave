@@ -1,0 +1,28 @@
+Este es un proyecto web desarrollado con Astro.
+
+## Stack Tecnológico Principal
+- **Framework:** Astro. Los componentes y páginas se crean en archivos `.astro`.
+- **Estilos:** Tailwind CSS. Todos los estilos deben aplicarse mediante clases de utilidad de Tailwind. No escribas CSS personalizado a menos que sea estrictamente necesario para animaciones complejas. No uses estilos en línea (style="...").
+- **Componentes Interactivos:** React. Usa componentes de React (`.jsx` o `.tsx`) para cualquier elemento que requiera interactividad del lado del cliente (ej. escenas 3D, formularios complejos). Estos deben ser importados en los archivos `.astro` como "islas" (`client:load`, `client:visible`, etc.).
+- **Animaciones:** GSAP (GreenSock Animation Platform), específicamente con el plugin `ScrollTrigger`. Las animaciones complejas o basadas en el scroll deben usar GSAP.
+- **Gráficos 3D:** Three.js, implementado a través de `@react-three/fiber` y `@react-three/drei` dentro de componentes de React.
+
+## Estructura de Archivos
+- **Componentes de Sección:** `src/components/sections/`
+- **Componentes Astro Genéricos:** `src/components/`
+- **Componentes React:** `src/components/react/`
+- **Layouts:** `src/layouts/`
+- **Scripts (ej. GSAP):** `src/scripts/`
+- **Estilos Globales:** `src/styles/global.css`
+- **Páginas:** `src/pages/`
+- **Fuentes:** `public/fonts/`
+
+## Convenciones de Código
+- **Responsividad:** Todos los componentes deben ser responsivos usando los breakpoints de Tailwind (`sm:`, `md:`, `lg:`, `xl:`).
+- **Imágenes:** Utiliza el componente `<Image />` de Astro para optimizar las imágenes.
+- **Formato:** Sigue las convenciones de formato estándar de Prettier.
+- **Comentarios:** Agrega comentarios explicativos en funciones o elementos menos claros de entender por si solos.
+- **Archivo:** Al principio de cada archivo debe estar comentada su dirección dentro del proyecto junto con el nombre.
+
+## Convenciones para Componentes de Sección
+- Cada componente de sección (archivos `.astro` en `src/components/sections/`) debe tener un contenedor principal (generalmente una etiqueta `<section>`) con un `id` único y semántico en minúsculas. Este `id` se usará como `trigger` en GSAP ScrollTrigger. Por ejemplo: `<section id="servicios">`, `<section id="portfolio">`.
