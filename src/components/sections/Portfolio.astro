@@ -1,0 +1,813 @@
+---
+// src/components/sections/Portfolio.astro
+// Componente de sección de proyectos destacados con efectos VHS, 3D y glassmorphism
+---
+
+<section id="portfolio" class="min-h-screen py-20 px-4 relative overflow-hidden">
+  <!-- Título principal de la sección -->
+  <div class="max-w-7xl mx-auto relative z-10">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 text-[#F5F5F5]" 
+        style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);">
+      <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">La Prueba</span> de Nuestro <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">Potencial.</span>
+    </h2>
+
+    <!-- Grid de proyectos -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Proyecto 1: Cromo Audiovisual -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(0,242,255,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/cromo.webp" 
+                 alt="Cromo Audiovisual" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://cromoaudiovisual.com/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#00F2FF]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);">
+              Cromo Audiovisual
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              Landing Page
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2: Perros y Gatos FOOD -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(255,0,229,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/perrosygatos.webp" 
+                 alt="Perros y Gatos FOOD" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://perrosygatosfood.com.ar/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#FF00E5]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(255, 0, 229, 0.5);">
+              Perros y Gatos FOOD
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              E-commerce
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3: Entrenador Personal Nino -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(157,78,221,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/profninop.webp" 
+                 alt="Entrenador Personal Nino" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://profninop.com/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#9D4EDD]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);">
+              Entrenador Personal Nino
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              E-commerce
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4: Terramarte -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(0,242,255,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/terramarte.webp" 
+                 alt="Terramarte" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://terramarte.com.co/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#00F2FF]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);">
+              Terramarte
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              Sitio Web Corporativo
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 5: Ameba Producciones -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(255,0,229,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/amebaproducciones.webp" 
+                 alt="Ameba Producciones" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://amebaproducciones.net/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#FF00E5]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(255, 0, 229, 0.5);">
+              Ameba Producciones
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              E-commerce
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 6: Yvy-leben -->
+      <div class="project-card gsap-animate
+                  relative perspective-1000
+                  transition-all duration-300
+                  hover:scale-105">
+        <div class="project-card-inner 
+                    bg-white/5 backdrop-blur-md border border-white/10 hover:border-transparent
+                    rounded-lg overflow-hidden h-full
+                    transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(157,78,221,0.4)]">
+          <!-- Imagen del proyecto -->
+          <div class="project-image-container relative">
+            <img src="/images/yvyleben.webp" 
+                 alt="Yvy-leben" 
+                 class="project-image w-full h-full object-cover transition-all duration-500">
+            <!-- Overlay VHS que aparecerá en hover -->
+            <div class="vhs-overlay absolute inset-0 opacity-0 transition-opacity duration-300">
+              <div class="scanlines"></div>
+              <div class="intro-wrap">
+                <div class="noise"></div>
+                <div class="noise noise-moving"></div>
+                <div class="play" data-splitting>PLAY</div>
+                <div class="time">--:--</div>
+                <div class="recordSpeed">SLP 0:00:00</div>
+                
+                <!-- Botón Ver Sitio Web -->
+                <div class="project-button-container">
+                  <a href="https://yvyleben.com/" target="_blank" rel="noopener noreferrer" class="project-view-button">
+                    <span class="button-text">Ver Sitio Web</span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenido de texto -->
+          <div class="project-content p-6">
+            <h3 class="project-title text-xl font-bold mb-2 text-[#9D4EDD]" 
+                style="font-family: 'VCR OSD Mono', monospace; text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);">
+              Yvy-leben
+            </h3>
+            <p class="project-category text-[#F5F5F5]/70 text-sm" 
+               style="font-family: 'VCR OSD Mono', monospace;">
+              E-commerce
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estilos para las tarjetas de proyecto */
+  .project-card {
+    min-height: 600px;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Estado inicial para animaciones GSAP */
+  .gsap-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Solo aplicar estado oculto cuando GSAP esté disponible */
+  .gsap-ready .gsap-animate {
+    opacity: 0;
+    transform: scale(0.9) translateY(60px);
+  }
+
+  .project-card-inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Perspectiva para efectos 3D */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Contenedor de imagen responsivo para imágenes verticales */
+  .project-image-container {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .project-image {
+    transition: opacity 0.5s ease, filter 0.5s ease, transform 0.3s ease;
+    object-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Contenido de texto posicionado debajo de la imagen */
+  .project-content {
+    flex-shrink: 0;
+    padding: 1.5rem;
+    background: rgba(13, 11, 26, 0.9);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Efectos VHS adaptados */
+  .vhs-overlay {
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .scanlines {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.6;
+    animation: opacity 3s linear infinite;
+  }
+
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.5) 51%);
+    background-size: 100% 4px;
+    animation: scanlines 0.2s linear infinite;
+  }
+
+  .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 200;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .noise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://ice-creme.de/images/background-noise.png');
+    pointer-events: none;
+  }
+
+  .noise-moving {
+    opacity: 1;
+    z-index: 250;
+  }
+
+  .noise-moving::before {
+    animation: noise 1s infinite alternate;
+  }
+
+  .intro-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'VCR OSD Mono', monospace;
+    color: #ffffff;
+    font-size: 0.75rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(43, 82, 255, 0.7);
+    z-index: 300;
+    pointer-events: none;
+  }
+
+  .intro-wrap .noise::before {
+    background-size: 200%;
+  }
+
+  .play {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    animation: rgbText 2s steps(9) 0s infinite alternate;
+    z-index: 400;
+    pointer-events: none;
+  }
+
+  .time {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    animation: rgbText 1s steps(9) 0s infinite alternate;
+    z-index: 400;
+    pointer-events: none;
+  }
+
+  .recordSpeed {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    animation: rgbText 1s steps(9) 0s infinite alternate;
+    z-index: 400;
+    pointer-events: none;
+  }
+
+  /* Animaciones VHS */
+  @keyframes noise {
+    0%, 100% { background-position: 0 0; }
+    10% { background-position: -5% -10%; }
+    20% { background-position: -15% 5%; }
+    30% { background-position: 7% -25%; }
+    40% { background-position: 20% 25%; }
+    50% { background-position: -25% 10%; }
+    60% { background-position: 15% 5%; }
+    70% { background-position: 0 15%; }
+    80% { background-position: 25% 35%; }
+    90% { background-position: -10% 10%; }
+  }
+
+  @keyframes opacity {
+    0% { opacity: 0.6; }
+    20% { opacity: 0.3; }
+    35% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    60% { opacity: 0.4; }
+    80% { opacity: 0.7; }
+    100% { opacity: 0.6; }
+  }
+
+  @keyframes scanlines {
+    from {
+      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.5) 51%);
+      background-size: 100% 4px;
+    }
+    to {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 50%, transparent 51%);
+      background-size: 100% 4px;
+    }
+  }
+
+  @keyframes rgbText {
+    0% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+    25% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+    45% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+    50% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+    55% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 3px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+    90% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+    100% {
+      text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+  }
+
+  /* Efectos en hover */
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+
+  .project-card:hover .vhs-overlay {
+    opacity: 1;
+  }
+
+  /* Estilos para el botón Ver Sitio Web */
+  .project-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: auto;
+  }
+
+  .project-view-button {
+    position: relative;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #00F2FF 0%, #FF00E5 100%);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    animation: buttonPulse 2s ease-in-out infinite;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 1001;
+    pointer-events: auto;
+  }
+
+  .project-view-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 1), 0 0 50px rgba(255, 0, 229, 0.6);
+    background: linear-gradient(135deg, #FF00E5 0%, #00F2FF 100%);
+    animation: buttonPulseHover 0.5s ease-in-out infinite;
+  }
+
+  .button-text {
+    position: relative;
+    z-index: 10;
+    color: #FFFFFF;
+    text-shadow: 
+      -1px -1px 0 #000000,
+      1px -1px 0 #000000,
+      -1px 1px 0 #000000,
+      1px 1px 0 #000000,
+      0 0 8px rgba(255, 255, 255, 0.5);
+    font-weight: 900;
+  }
+
+  .button-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #00F2FF, #FF00E5, #9D4EDD);
+    border-radius: 8px;
+    opacity: 0.7;
+    filter: blur(8px);
+    z-index: -1;
+    animation: glowRotate 3s linear infinite;
+  }
+
+  @keyframes buttonPulse {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.8), 0 0 25px rgba(255, 0, 229, 0.4);
+    }
+  }
+
+  @keyframes glowRotate {
+    0% {
+      filter: blur(8px) hue-rotate(0deg);
+    }
+    100% {
+      filter: blur(8px) hue-rotate(360deg);
+    }
+  }
+
+  @keyframes buttonPulseHover {
+    0%, 100% {
+      box-shadow: 0 0 25px rgba(0, 242, 255, 1), 0 0 50px rgba(255, 0, 229, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(0, 242, 255, 1), 0 0 70px rgba(255, 0, 229, 0.8);
+    }
+  }
+
+  /* Responsividad móvil */
+  @media (max-width: 768px) {
+    .project-image-container {
+      height: 400px;
+    }
+    
+    .project-card {
+      min-height: 520px;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+
+    .project-view-button {
+      padding: 16px 32px;
+      font-size: 0.875rem;
+      min-width: 160px;
+      min-height: 48px;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    .project-view-button:hover {
+      transform: scale(1.15);
+    }
+
+    .button-text {
+      font-size: 0.875rem;
+      font-weight: 900;
+    }
+    
+    .play, .time, .recordSpeed {
+      font-size: 0.625rem;
+    }
+  }
+</style>
+
+<script>
+  console.log('🔧 Portfolio.astro script cargado');
+  
+  // Verificar que la sección existe
+  const portfolioSection = document.getElementById('portfolio');
+  console.log('📍 Sección portfolio encontrada:', portfolioSection);
+  
+  // Verificar las tarjetas de proyecto
+  const projectCards = document.querySelectorAll('.project-card');
+  console.log('🃏 Tarjetas de proyecto encontradas:', projectCards.length);
+  
+  // Efecto de profundidad 3D con mousemove
+  projectCards.forEach((card, index) => {
+    console.log(`🃏 Configurando tarjeta ${index + 1}:`, card);
+    
+    card.addEventListener('mousemove', (e: Event) => {
+      const mouseEvent = e as MouseEvent;
+      const rect = card.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      // Calcular posición relativa del mouse (-1 a 1)
+      const mouseX = (mouseEvent.clientX - centerX) / (rect.width / 2);
+      const mouseY = (mouseEvent.clientY - centerY) / (rect.height / 2);
+      
+      // Aplicar transformaciones 3D sutiles
+      const rotateY = mouseX * 10; // Rotación en Y máximo 10 grados
+      const rotateX = -mouseY * 10; // Rotación en X máximo 10 grados (invertido)
+      
+      // Aplicar transformaciones a diferentes capas para crear profundidad
+      const cardInner = card.querySelector('.project-card-inner') as HTMLElement;
+      const projectImage = card.querySelector('.project-image') as HTMLElement;
+      const projectContent = card.querySelector('.project-content') as HTMLElement;
+      
+      if (cardInner) {
+        cardInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+      
+      if (projectImage) {
+        // La imagen se mueve ligeramente más para crear parallax
+        projectImage.style.transform = `
+          scale(1.05) 
+          translateX(${mouseX * 5}px) 
+          translateY(${mouseY * 5}px)
+        `;
+      }
+      
+      if (projectContent) {
+        // El contenido se mueve menos para crear capas
+        projectContent.style.transform = `
+          translateX(${mouseX * 2}px) 
+          translateY(${mouseY * 2}px)
+        `;
+      }
+    });
+    
+    // Resetear transformaciones al salir del hover
+    card.addEventListener('mouseleave', () => {
+      const cardInner = card.querySelector('.project-card-inner') as HTMLElement;
+      const projectImage = card.querySelector('.project-image') as HTMLElement;
+      const projectContent = card.querySelector('.project-content') as HTMLElement;
+      
+      if (cardInner) {
+        cardInner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      }
+      
+      if (projectImage) {
+        projectImage.style.transform = 'scale(1.05) translateX(0px) translateY(0px)';
+      }
+      
+      if (projectContent) {
+        projectContent.style.transform = 'translateX(0px) translateY(0px)';
+      }
+    });
+  });
+  
+  console.log('✅ Configuración de Portfolio completada');
+
+  // Animaciones GSAP con ScrollTrigger
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎬 DOM cargado, verificando GSAP...');
+    
+    // Función para inicializar GSAP
+    function initGSAP() {
+      if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+        gsap.registerPlugin(ScrollTrigger);
+        console.log('🎬 GSAP y ScrollTrigger inicializados para Portfolio');
+
+        // Marcar que GSAP está listo
+        document.body.classList.add('gsap-ready');
+        
+        // Pequeño delay para asegurar que los estilos CSS se apliquen
+        setTimeout(() => {
+          // Animación de entrada de las tarjetas
+          gsap.fromTo(".gsap-animate", 
+            {
+              opacity: 0,
+              y: 60,
+              scale: 0.9
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.8,
+              stagger: 0.15,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: "#portfolio",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          );
+
+          console.log('✨ Animaciones GSAP de Portfolio configuradas');
+        }, 100);
+      } else {
+        console.warn('⚠️ GSAP no está disponible para Portfolio');
+        // Si GSAP no está disponible, asegurar que las tarjetas sean visibles
+        document.querySelectorAll('.gsap-animate').forEach(el => {
+          const element = el as HTMLElement;
+          element.style.opacity = '1';
+          element.style.transform = 'scale(1) translateY(0)';
+        });
+      }
+    }
+
+    // Intentar inicializar GSAP inmediatamente
+    initGSAP();
+    
+    // También intentar después de un pequeño delay por si GSAP aún no se ha cargado
+    setTimeout(initGSAP, 100);
+    setTimeout(initGSAP, 500);
+  });
+</script>

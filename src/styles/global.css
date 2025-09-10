@@ -1,0 +1,45 @@
+/* src/styles/global.css */
+
+/* 1. Definición de las fuentes locales */
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('/fonts/MonumentExtended-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VCR OSD Mono';
+  src: url('/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'sans-serif';
+  --font-monument: 'Monument Extended', 'sans-serif';
+  --font-vcr: 'VCR OSD Mono', 'monospace';
+}
+
+/* 4. Estilos globales base (Esto sigue igual) */
+body {
+  background-color: #0D0B1A;
+  color: #F5F5F5;
+  font-family: var(--font-sans); /* Usamos la variable que definimos */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-monument); /* Usamos la variable que definimos */
+}

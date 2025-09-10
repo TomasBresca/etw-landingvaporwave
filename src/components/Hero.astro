@@ -1,0 +1,474 @@
+---
+// src/components/Hero.astro
+---
+
+<!-- Script para animaciones GSAP -->
+<script>
+  import '../scripts/hero-animations.js';
+</script>
+<!-- Sección Hero -->
+<section id="hero" class="h-screen max-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+  <!-- Fondo animado con elementos magenta -->
+  <div class="hero-background-elements absolute inset-0 overflow-hidden">
+    <div class="hero-bg-element absolute top-10 left-10 w-32 h-32 bg-[#FF00E5] opacity-10 rounded-full blur-xl animate-pulse"></div>
+    <div class="hero-bg-element absolute top-1/3 right-20 w-24 h-24 bg-[#FF00E5] opacity-15 rounded-full blur-lg animate-bounce" style="animation-duration: 3s;"></div>
+    <div class="hero-bg-element absolute bottom-20 left-1/4 w-40 h-40 bg-[#FF00E5] opacity-8 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="hero-bg-element absolute bottom-1/3 right-10 w-20 h-20 bg-[#FF00E5] opacity-12 rounded-full blur-xl animate-bounce" style="animation-duration: 4s; animation-delay: 2s;"></div>
+    <!-- Líneas de conexión sutiles -->
+    <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FF00E5] to-transparent opacity-20"></div>
+    <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#FF00E5] to-transparent opacity-15"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto w-full relative z-10">
+    <!-- Layout de dos columnas responsivo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      
+      <!-- Columna Izquierda: Contenido -->
+      <div class="hero-text-content md:order-1 text-left space-y-6">
+        <!-- Título H1 (Primera fila en móvil) -->
+        <div class="order-1 flex-shrink-0">
+          <h1 class="font-monument text-[38px] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F5F5] leading-tight">
+            Convierte
+            <span class="glitch-text text-[#00F2FF]" data-text="clics">clics</span> en <span class="text-shadow-[0_0_20px_rgba(0,242,255,0.6)] text-[#00F2FF]">clientes</span>
+          </h1>
+        </div>
+        
+        <!-- Párrafo subtítulo (Solo visible en desktop) -->
+        <p class="hidden md:block font-sans text-base md:text-lg lg:text-xl text-[#F5F5F5] leading-relaxed max-w-2xl">
+          Tu web debe ser tu mejor herramienta de ventas. Por eso, diseñamos un recorrido digital lógico y persuasivo que anticipa las necesidades de tus visitantes, guiándolos directamente hacia la conversión y eliminando cualquier punto de fricción que pueda costar una oportunidad de negocio
+        </p>
+        
+        <!-- Botón CTA (Solo visible en desktop) -->
+        <div class="hidden md:block pt-4">
+          <button class="uppercase group relative inline-flex items-center justify-center px-8 py-4 font-vcr font-bold text-sm md:text-base bg-transparent border-2 border-[#00F2FF] text-[#00F2FF] rounded-lg transition-all duration-300 hover:bg-[#00F2FF] hover:text-[#0D0B1A] hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] transform hover:scale-105">
+            <span class="relative z-10">Envíame los detalles</span>
+            <div class="absolute inset-0 bg-[#00F2FF] rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Columna Derecha: Pirámide Animada (Solo visible en desktop) -->
+      <div class="hero-pyramid-desktop hidden md:flex md:order-2 items-center justify-center">
+        <div class="pyramid-loader">
+          <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+          </div>  
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Layout móvil específico: 3 filas (H1, Pirámide, CTA) -->
+    <div class="md:hidden w-full flex flex-col justify-center h-full py-8 space-y-6">
+      <!-- Segunda fila móvil: Pirámide más grande -->
+      <div class="hero-pyramid-mobile flex items-center justify-center flex-shrink-0">
+        <div class="pyramid-loader-mobile">
+          <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+          </div>  
+        </div>
+      </div>
+      
+      <!-- Tercera fila móvil: Párrafo y CTA -->
+      <div class="text-left space-y-4 flex-shrink-0">
+        <p class="font-sans text-sm leading-relaxed text-[#F5F5F5]">
+          Tu web debe ser tu mejor herramienta de ventas. Por eso, diseñamos un recorrido digital lógico y persuasivo que anticipa las necesidades de tus visitantes, guiándolos directamente hacia la conversión y eliminando cualquier punto de fricción que pueda costar una oportunidad de negocio
+        </p>
+        
+        <div class="pt-2">
+          <button class="uppercase group relative inline-flex items-center justify-center px-6 py-3 font-vcr font-bold text-sm bg-transparent border-2 border-[#00F2FF] text-[#00F2FF] rounded-lg transition-all duration-300 hover:bg-[#00F2FF] hover:text-[#0D0B1A] hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] transform hover:scale-105">
+            <span class="relative z-10">Hablemos de tu Futuro</span>
+            <div class="absolute inset-0 bg-[#00F2FF] rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Estilos específicos para la sección Hero - Animación de pirámide 3D */
+.pyramid-loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+}
+
+/* Pirámide móvil más grande */
+.pyramid-loader-mobile {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+}
+
+@media (min-width: 640px) {
+  .pyramid-loader {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pyramid-loader {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pyramid-loader {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pyramid-loader {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+/* Estilos responsivos para la pirámide móvil */
+@media (min-width: 375px) {
+  .pyramid-loader-mobile {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 414px) {
+  .pyramid-loader-mobile {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.pyramid-loader .wrapper .side {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@media (min-width: 640px) {
+  .pyramid-loader .wrapper .side {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pyramid-loader .wrapper .side {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pyramid-loader .wrapper .side {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pyramid-loader .wrapper .side {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Estilos para los lados de la pirámide móvil */
+.pyramid-loader-mobile .wrapper .side {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@media (min-width: 375px) {
+  .pyramid-loader-mobile .wrapper .side {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (min-width: 414px) {
+  .pyramid-loader-mobile .wrapper .side {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.pyramid-loader .wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .shadow {
+  width: 80px;
+  height: 80px;
+  background: #8B5AD5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(15px);
+}
+
+@media (min-width: 640px) {
+  .pyramid-loader .wrapper .shadow {
+    width: 100px;
+    height: 100px;
+    filter: blur(18px);
+  }
+}
+
+@media (min-width: 768px) {
+  .pyramid-loader .wrapper .shadow {
+    width: 120px;
+    height: 120px;
+    filter: blur(20px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pyramid-loader .wrapper .shadow {
+    width: 140px;
+    height: 140px;
+    filter: blur(22px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .pyramid-loader .wrapper .shadow {
+    width: 160px;
+    height: 160px;
+    filter: blur(25px);
+  }
+}
+
+/* Estilos para los lados específicos de la pirámide móvil */
+.pyramid-loader-mobile .wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader-mobile .wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader-mobile .wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader-mobile .wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+/* Sombra para la pirámide móvil */
+.pyramid-loader-mobile .wrapper .shadow {
+  width: 100px;
+  height: 100px;
+  background: #8B5AD5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(18px);
+}
+
+@media (min-width: 375px) {
+  .pyramid-loader-mobile .wrapper .shadow {
+    width: 110px;
+    height: 110px;
+    filter: blur(20px);
+  }
+}
+
+@media (min-width: 414px) {
+  .pyramid-loader-mobile .wrapper .shadow {
+    width: 120px;
+    height: 120px;
+    filter: blur(22px);
+  }
+}
+
+/* Efecto Glitch para palabras destacadas */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  --top: 0;        /* offset from top [0 - 10] */
+  --left: 0;       /* offset from left [0.001 - 1] */
+  --v-height: 30%; /* visible part */
+  
+  --n-tenth: calc(var(--top) * 0.1);
+  --t-cut: calc(var(--n-tenth) * 10%);
+  --b-cut: calc(var(--t-cut) + var(--v-height));
+  
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  
+  color: #00F2FF;
+  transform: translateX(calc(var(--left) * 100%));
+  
+  /* Evita la pixelización */
+  filter: drop-shadow(0 0 transparent); 
+  
+  text-shadow: calc(var(--left) * -3em) 0 0.02em #2BDEAC, 
+               calc(var(--left) * -6em) 0 0.02em #FF00E5;
+  
+  background-color: #0D0B1A;
+  clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
+}
+
+.glitch-text::before {
+  animation: glitch-before 1.7s infinite alternate-reverse;
+}
+
+.glitch-text::after {
+  animation: glitch-after 3.1s infinite alternate;
+}
+
+
+
+@keyframes glitch-after {
+  10%, 30%, 50%, 70%, 90% {
+    --top: 0;
+    --left: 0;
+  }
+  0% {
+   --v-height: 15%; 
+  }
+  20% {
+    --left: 0.005;
+  }
+  40% {
+    --left: 0.01;
+    --v-height: 20%;
+    --top: 3;
+  }
+  60% {
+    --left: 0.03;
+    --v-height: 25%;
+    --top: 6;
+  }
+  80% {
+    --left: 0.07;
+    --v-height: 5%;
+    --top: 8;
+  }
+  100% {
+    --left: 0.083;
+    --v-height: 30%;
+    --top: 1;
+  }
+}
+
+@keyframes glitch-before {
+  10%, 30%, 50%, 70%, 90% {
+    --top: 0;
+    --left: 0;
+  }
+  0% {
+   --v-height: 15%; 
+   --top: 10;
+  }
+  20% {
+    --left: -0.005;
+  }
+  40% {
+    --left: -0.01;
+    --v-height: 17%;
+    --top: 3;
+  }
+  60% {
+    --left: -0.03;
+    --v-height: 35%;
+    --top: 6;
+  }
+  80% {
+    --left: -0.07;
+    --v-height: 5%;
+    --top: 8;
+  }
+  100% {
+    --left: -0.083;
+    --v-height: 30%;
+    --top: 1;
+  }
+}
+</style>
