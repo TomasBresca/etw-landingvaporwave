@@ -6,9 +6,9 @@
 <section id="portfolio" class="min-h-screen py-20 px-4 relative overflow-hidden">
   <!-- Elementos decorativos de fondo -->
   <div class="portfolio-background absolute inset-0 pointer-events-none">
-    <!-- 3D Grid Pattern -->
-    <div class="graph-container absolute inset-0 overflow-hidden">
-      <div class="graph absolute inset-0"></div>
+    <!-- Outrun Grid Pattern -->
+    <div class="grid-outrun-container absolute inset-0 overflow-hidden">
+      <div class="grid-outrun absolute inset-0"></div>
     </div>
     
     <!-- Elementos de luz ambientales -->
@@ -235,93 +235,51 @@
 </section>
 
 <style>
-  /* 3D Grid Background Pattern */
-  .graph-container {
+  /* Outrun Grid Background Pattern */
+  .grid-outrun-container {
     overflow: hidden;
     height: 100vh;
     position: relative;
-    mask: 
-      radial-gradient(
-        ellipse 80% 60% at center 85%,
-        black 0%,
-        black 30%,
-        transparent 70%
-      );
-    -webkit-mask: 
-      radial-gradient(
-        ellipse 80% 60% at center 85%,
-        black 0%,
-        black 30%,
-        transparent 70%
-      );
   }
 
-  .graph {
-    background: 
-      linear-gradient(
-        180deg, 
-        rgba(0, 0, 0, 0) 0px, 
-        rgba(0, 242, 255, 0.4) 0%, 
-        rgba(0, 242, 255, 0.4) 2px, 
-        rgba(0, 0, 0, 0) 0px
-      ), 
-      linear-gradient(
-        90deg, 
-        rgba(0, 0, 0, 0) 0px, 
-        rgba(0, 242, 255, 0.4) 0%, 
-        rgba(0, 242, 255, 0.4) 2px, 
-        rgba(0, 0, 0, 0) 0px
-      ); 
-    background-size: 2em 1em, 2em 1em;
-    background-color: transparent;
-    height: 30em;
-    width: 120%;
+  .grid-outrun {
     position: absolute;
-    bottom: -5em;
-    left: 50%;
-    transform: translateX(-50%) perspective(300px) rotateX(75deg) scale(1.8);
-    opacity: 0.8;
-  }
-
-  /* Cloud-like gradient overlay */
-  .graph-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+    bottom: -30%;
     left: 0;
-    right: 0;
-    height: 40%;
-    background: 
-      radial-gradient(
-        ellipse 100% 80% at center bottom,
-        rgba(0, 242, 255, 0.05) 0%,
-        rgba(0, 242, 255, 0.02) 30%,
-        transparent 60%
-      );
-    filter: blur(20px);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  /* Side blur clouds */
-  .graph-container::before {
-    content: '';
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(
-        90deg,
-        rgba(0, 242, 255, 0.08) 0%,
-        transparent 25%,
-        transparent 75%,
-        rgba(0, 242, 255, 0.08) 100%
-      );
-    filter: blur(30px);
+    margin-left: -50%;
+    width: 200%;
+    height: 120%;
+    background-image: 
+        repeating-linear-gradient(
+            90deg, 
+            #FF00E5 0%, 
+            transparent 2px, 
+            transparent 25px, 
+            #FF00E5 27px
+        ),
+        repeating-linear-gradient(
+            0deg, 
+            #FF00E5 0%, 
+            transparent 2px, 
+            transparent 25px, 
+            #FF00E5 27px
+        );
+    transform: perspective(50vh) rotateX(60deg) translateZ(10px);
     z-index: 1;
-    pointer-events: none;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 229, 0.6));
+    mask: linear-gradient(to top, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 40%, 
+        rgba(0,0,0,0.6) 55%, 
+        rgba(0,0,0,0) 70%
+    );
+    -webkit-mask: linear-gradient(to top, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 40%, 
+        rgba(0,0,0,0.6) 55%, 
+        rgba(0,0,0,0) 70%
+    );
+    opacity: 0.7;
   }
 
   /* Carousel Styles */
@@ -342,7 +300,7 @@
     height: 100%;
     opacity: 0;
     transform: translateX(100%);
-    transition: all 0.6s ease-in-out;
+    transition: none; /* Disable CSS transition - using JS animation instead */
   }
 
   .carousel-slide.active {
@@ -350,8 +308,24 @@
     transform: translateX(0);
   }
 
-  .carousel-slide.prev {
+  .carousel-slide.slide-out-left {
+    opacity: 0;
     transform: translateX(-100%);
+  }
+
+  .carousel-slide.slide-out-right {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .carousel-slide.slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .carousel-slide.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   /* VHS Scanlines Effect */
@@ -531,31 +505,82 @@
   
   console.log(`📊 Portfolio: ${slides.length} slides encontradas`);
 
-  function updateSlide(newIndex) {
-    // Remove active class from current slide and indicator
-    slides[currentSlide].classList.remove('active');
+function updateSlide(newIndex, direction = 'next') {
+    if (newIndex === currentSlide) return;
+
+    const currentSlideElement = slides[currentSlide];
+    const newSlideElement = slides[newIndex];
+
+    console.log(`🎯 Portfolio: Animando de ${currentSlide} a ${newIndex} (${direction})`);
+
+    // 1. Preparar el nuevo slide (posicionarlo fuera de la pantalla)
+    if (direction === 'next') {
+        // El nuevo slide empieza a la derecha
+        newSlideElement.style.transform = 'translateX(100%)';
+    } else { // direction === 'prev'
+        // El nuevo slide empieza a la izquierda
+        newSlideElement.style.transform = 'translateX(-100%)';
+    }
+    
+    // Hacerlo visible pero aún fuera de la pantalla
+    newSlideElement.style.opacity = '1';
+    newSlideElement.classList.add('active'); // Añadimos active para que se vea
+    
+    // Forzar al navegador a aplicar el estado inicial
+    newSlideElement.offsetHeight; 
+
+    // 2. Animar ambos slides
+    requestAnimationFrame(() => {
+        // Habilitar transiciones para la animación
+        currentSlideElement.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        newSlideElement.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+
+        if (direction === 'next') {
+            // El slide actual se va a la izquierda
+            currentSlideElement.style.transform = 'translateX(-100%)';
+            currentSlideElement.style.opacity = '0';
+            // El nuevo slide entra al centro
+            newSlideElement.style.transform = 'translateX(0)';
+        } else { // direction === 'prev'
+            // El slide actual se va a la derecha
+            currentSlideElement.style.transform = 'translateX(100%)';
+            currentSlideElement.style.opacity = '0';
+            // El nuevo slide entra al centro
+            newSlideElement.style.transform = 'translateX(0)';
+        }
+    });
+
+    // 3. Limpieza y actualización de estado
+    // Quitar la clase 'active' del slide viejo
+    currentSlideElement.classList.remove('active');
+
+    // Actualizar los indicadores
     indicators[currentSlide].classList.remove('active');
     indicators[currentSlide].style.background = '#F5F5F5';
     indicators[currentSlide].style.opacity = '0.3';
+    indicators[newIndex].classList.add('active');
     
-    // Update current slide index
+    // Actualizar el índice del slide actual
     currentSlide = newIndex;
-    
-    // Add active class to new slide and indicator
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-    
-    console.log(`🎯 Portfolio: Slide activo ${currentSlide + 1}`);
-  }
+
+    // Después de la animación, quitar los estilos en línea para que las clases CSS controlen el estado
+    setTimeout(() => {
+        slides.forEach(slide => {
+            slide.style.transition = '';
+            // No reseteamos el transform ni la opacidad para evitar "saltos" de los slides inactivos
+        });
+        console.log(`✅ Animación completada para el slide ${currentSlide + 1}`);
+    }, 400); // Coincidir con la duración de la transición
+}
 
   function nextSlide() {
     const newIndex = (currentSlide + 1) % slides.length;
-    updateSlide(newIndex);
+    updateSlide(newIndex, 'next');
   }
 
   function prevSlide() {
     const newIndex = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlide(newIndex);
+    updateSlide(newIndex, 'prev');
   }
 
   // Event listeners
@@ -570,7 +595,8 @@
   // Indicator clicks
   indicators.forEach((indicator, index) => {
     indicator.addEventListener('click', () => {
-      updateSlide(index);
+      const direction = index > currentSlide ? 'next' : 'prev';
+      updateSlide(index, direction);
     });
   });
 
