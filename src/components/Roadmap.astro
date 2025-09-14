@@ -1,0 +1,413 @@
+---
+// src/components/Roadmap.astro
+// Componente de hoja de ruta del proceso de desarrollo con diseño glassmorphism
+---
+
+<section id="roadmap" class="min-h-screen py-20 px-4 relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="roadmap-background absolute inset-0 pointer-events-none">
+    <!-- Líneas de conexión sutiles -->
+    <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00F2FF] to-transparent opacity-20"></div>
+    <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#FF00E5] to-transparent opacity-15"></div>
+    
+    <!-- Elementos de luz ambientales -->
+    <div class="ambient-glow-1 absolute top-32 left-20 w-24 h-24 bg-[#00F2FF] opacity-8 rounded-full blur-2xl animate-pulse"></div>
+    <div class="ambient-glow-2 absolute bottom-32 right-32 w-32 h-32 bg-[#FF00E5] opacity-6 rounded-full blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Título principal de la sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F5F5] mb-4" 
+          style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);">
+        NUESTRA <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">HOJA DE RUTA</span>
+      </h2>
+      <p class="text-lg md:text-xl text-[#F5F5F5]/80 max-w-3xl mx-auto" 
+         style="font-family: 'Inter', sans-serif;">
+        Proceso de Trabajo
+      </p>
+    </div>
+
+    <!-- Contenedor del roadmap -->
+    <div class="roadmap-container relative max-w-7xl mx-auto">
+      <!-- Contenedor principal con flexbox para layout horizontal -->
+      <div class="roadmap-flow flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+        
+        <!-- Paso 1: Estrategia -->
+        <div class="roadmap-step step-1 relative flex-shrink-0">
+          <!-- Ícono flotante -->
+          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#00F2FF]/50 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#00F2FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Tarjeta principal -->
+          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#00F2FF]/50 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 w-full md:w-80">
+            <div class="text-center">
+              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
+                  style="font-family: 'Monument Extended', sans-serif;">
+                1. <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">ESTRATEGIA</span>
+              </h3>
+              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
+                 style="font-family: 'Inter', sans-serif;">
+                Definimos objetivos, público, público y la arquitectura de conversión de tu web.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flecha 1 → 2 -->
+        <div class="arrow arrow-1-2 hidden md:flex items-center justify-center flex-shrink-0 px-4">
+          <svg class="w-12 h-6 text-[#FF00E5]" fill="none" stroke="currentColor" viewBox="0 0 48 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36 12H6m30 0l-6-6m6 6l-6 6"></path>
+          </svg>
+        </div>
+
+        <!-- Paso 2: Diseño & Desarrollo -->
+        <div class="roadmap-step step-2 relative flex-shrink-0">
+          <!-- Ícono flotante -->
+          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#FF00E5]/50 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#FF00E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Tarjeta principal -->
+          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#FF00E5]/50 hover:shadow-[0_0_30px_rgba(255,0,229,0.3)] hover:scale-105 w-full md:w-80">
+            <div class="text-center">
+              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
+                  style="font-family: 'Monument Extended', sans-serif;">
+                2. <span class="text-[#FF00E5]" style="text-shadow: 0 0 20px rgba(255, 0, 229, 0.6);">DISEÑO & DESARROLLO</span>
+              </h3>
+              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
+                 style="font-family: 'Inter', sans-serif;">
+                Creamos la interfaz, programamos funcionalidades y optimizamos para resultados.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flecha 2 → 3 -->
+        <div class="arrow arrow-2-3 hidden md:flex items-center justify-center flex-shrink-0 px-4">
+          <svg class="w-12 h-6 text-[#9D4EDD]" fill="none" stroke="currentColor" viewBox="0 0 48 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36 12H6m30 0l-6-6m6 6l-6 6"></path>
+          </svg>
+        </div>
+
+        <!-- Paso 3: Lanzamiento & Crecimiento -->
+        <div class="roadmap-step step-3 relative flex-shrink-0">
+          <!-- Ícono flotante -->
+          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#9D4EDD]/50 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#9D4EDD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Tarjeta principal -->
+          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#9D4EDD]/50 hover:shadow-[0_0_30px_rgba(157,78,221,0.3)] hover:scale-105 w-full md:w-80">
+            <div class="text-center">
+              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
+                  style="font-family: 'Monument Extended', sans-serif;">
+                3. <span class="text-[#9D4EDD]" style="text-shadow: 0 0 20px rgba(157, 78, 221, 0.6);">LANZAMIENTO & CRECIMIENTO</span>
+              </h3>
+              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
+                 style="font-family: 'Inter', sans-serif;">
+                Publicamos tu sitio, medimos resultados e iteramos para escalar tu éxito.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Layout principal con flexbox */
+  .roadmap-flow {
+    align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
+  }
+
+  .roadmap-step {
+    position: relative;
+    min-height: 280px; /* Altura mínima consistente */
+  }
+
+  /* Tarjetas con altura fija y efectos mejorados */
+  .step-card {
+    height: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Borde de gradiente mejorado - eliminamos el pseudo-elemento duplicado */
+  .step-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, transparent);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* Gradientes específicos para cada tarjeta */
+  .step-1 .step-card:hover::before {
+    background: linear-gradient(135deg, #00F2FF 0%, #9D4EDD 50%, #FF00E5 100%);
+    opacity: 1;
+  }
+
+  .step-2 .step-card:hover::before {
+    background: linear-gradient(135deg, #FF00E5 0%, #9D4EDD 50%, #00F2FF 100%);
+    opacity: 1;
+  }
+
+  .step-3 .step-card:hover::before {
+    background: linear-gradient(135deg, #9D4EDD 0%, #00F2FF 50%, #FF00E5 100%);
+    opacity: 1;
+  }
+
+  /* Efectos para los íconos flotantes */
+  .step-icon .icon-container {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .roadmap-step:hover .step-icon .icon-container {
+    transform: translateY(-4px) scale(1.1);
+  }
+
+  .step-1:hover .step-icon .icon-container {
+    border-color: #00F2FF;
+    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.4), 0 0 0 1px rgba(0, 242, 255, 0.2);
+  }
+
+  .step-2:hover .step-icon .icon-container {
+    border-color: #FF00E5;
+    box-shadow: 0 8px 30px rgba(255, 0, 229, 0.4), 0 0 0 1px rgba(255, 0, 229, 0.2);
+  }
+
+  .step-3:hover .step-icon .icon-container {
+    border-color: #9D4EDD;
+    box-shadow: 0 8px 30px rgba(157, 78, 221, 0.4), 0 0 0 1px rgba(157, 78, 221, 0.2);
+  }
+
+  /* Animaciones mejoradas para las flechas */
+  .arrow {
+    transition: all 0.3s ease;
+  }
+
+  .arrow svg {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+
+  .arrow:hover svg {
+    transform: scale(1.1) translateX(3px);
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+
+  /* Animaciones de entrada eliminadas para evitar conflictos */
+  .roadmap-step {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .roadmap-flow {
+      gap: 2rem;
+    }
+    
+    .step-card {
+      margin-top: 2rem;
+      min-height: 240px;
+    }
+    
+    .step-title {
+      font-size: 1.25rem !important;
+      line-height: 1.3;
+      margin-bottom: 1rem !important;
+    }
+    
+    .step-description {
+      font-size: 0.875rem !important;
+      line-height: 1.5;
+    }
+    
+    .step-icon .icon-container {
+      width: 3.5rem !important;
+      height: 3.5rem !important;
+    }
+    
+    .step-icon .icon-container svg {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+    }
+  }
+
+  /* Animaciones de fondo optimizadas */
+  .ambient-glow-1 {
+    animation: glowFloat1 8s ease-in-out infinite;
+  }
+
+  .ambient-glow-2 {
+    animation: glowFloat2 10s ease-in-out infinite;
+  }
+
+  @keyframes glowFloat1 {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.08;
+    }
+    50% {
+      transform: translateY(-15px) scale(1.05);
+      opacity: 0.12;
+    }
+  }
+
+  @keyframes glowFloat2 {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.06;
+    }
+    50% {
+      transform: translateY(12px) scale(0.95);
+      opacity: 0.1;
+    }
+  }
+
+  /* Mejoras para el contenedor principal */
+  .roadmap-container {
+    padding: 2rem 0;
+  }
+
+  /* Efectos de hover mejorados */
+  .step-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .step-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+</style>
+
+<script>
+  console.log('🔧 Roadmap.astro script cargado');
+  
+  // Verificar que la sección existe
+  const roadmapSection = document.getElementById('roadmap');
+  console.log('📍 Sección roadmap encontrada:', roadmapSection);
+  
+  // Verificar los pasos del roadmap
+  const roadmapSteps = document.querySelectorAll('.roadmap-step');
+  console.log('📋 Pasos del roadmap encontrados:', roadmapSteps.length);
+  
+  roadmapSteps.forEach((step, index) => {
+    console.log(`📋 Paso ${index + 1}:`, step);
+  });
+  
+  console.log('✅ Configuración de Roadmap completada');
+
+  // Animaciones GSAP con ScrollTrigger
+  document.addEventListener('DOMContentLoaded', function() {
+    // Verificar que GSAP esté disponible
+    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+      gsap.registerPlugin(ScrollTrigger);
+      console.log('🎬 GSAP y ScrollTrigger inicializados para Roadmap');
+
+      // Animación de entrada del título
+      gsap.fromTo("h2", {
+        opacity: 0,
+        y: 50
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#roadmap",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Animación de entrada de los pasos con stagger
+      gsap.fromTo(".roadmap-step", {
+        opacity: 0,
+        y: 60,
+        scale: 0.9
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#roadmap",
+          start: "top 70%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Animación de las flechas
+      gsap.fromTo(".arrow", {
+        opacity: 0,
+        x: -20
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#roadmap",
+          start: "top 60%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Animación de los elementos de fondo
+      gsap.to(".ambient-glow-1", {
+        scale: 1.3,
+        opacity: 0.12,
+        duration: 4,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut"
+      });
+
+      gsap.to(".ambient-glow-2", {
+        scale: 0.7,
+        opacity: 0.1,
+        duration: 5,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut",
+        delay: 2
+      });
+
+      console.log('✨ Animaciones GSAP de Roadmap configuradas');
+    } else {
+      console.warn('⚠️ GSAP no está disponible para Roadmap');
+    }
+  });
+</script>
