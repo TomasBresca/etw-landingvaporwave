@@ -1,9 +1,9 @@
 ---
 // src/components/Roadmap.astro
-// Componente de hoja de ruta del proceso de desarrollo con diseño glassmorphism
+// Componente de testimonios de clientes con diseño glassmorphism
 ---
 
-<section id="roadmap" class="min-h-screen py-20 px-4 relative overflow-hidden">
+<section id="testimonios" class="min-h-screen py-20 px-4 relative overflow-hidden">
   <!-- Elementos decorativos de fondo -->
   <div class="roadmap-background absolute inset-0 pointer-events-none">
     <!-- Líneas de conexión sutiles -->
@@ -15,112 +15,105 @@
     <div class="ambient-glow-2 absolute bottom-32 right-32 w-32 h-32 bg-[#FF00E5] opacity-6 rounded-full blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto relative z-10">
+  <div class="w-full px-8 mx-auto relative z-10">
     <!-- Título principal de la sección -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F5F5] mb-4" 
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F5F5] mb-16"
           style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);">
-        NUESTRA <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">HOJA DE RUTA</span>
+        NUESTROS <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">TESTIMONIOS</span>
       </h2>
-      <p class="text-lg md:text-xl text-[#F5F5F5]/80 max-w-3xl mx-auto" 
-         style="font-family: 'Inter', sans-serif;">
-        Proceso de Trabajo
-      </p>
     </div>
 
-    <!-- Contenedor del roadmap -->
-    <div class="roadmap-container relative max-w-7xl mx-auto">
+    <!-- Contenedor de testimonios -->
+    <div class="testimonials-container relative w-full mx-auto">
       <!-- Contenedor principal con flexbox para layout horizontal -->
-      <div class="roadmap-flow flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+      <div class="testimonials-flow flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12 xl:gap-16">
         
-        <!-- Paso 1: Estrategia -->
-        <div class="roadmap-step step-1 relative flex-shrink-0">
-          <!-- Ícono flotante -->
-          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
-            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#00F2FF]/50 rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#00F2FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-              </svg>
-            </div>
-          </div>
-          
+        <!-- Testimonio 1 -->
+        <div class="testimonial-card testimonial-1 relative flex-shrink-0 flex-1">
           <!-- Tarjeta principal -->
-          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#00F2FF]/50 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 w-full md:w-80">
-            <div class="text-center">
-              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
-                  style="font-family: 'Monument Extended', sans-serif;">
-                1. <span class="text-[#00F2FF]" style="text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);">ESTRATEGIA</span>
-              </h3>
-              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
-                 style="font-family: 'Inter', sans-serif;">
-                Definimos objetivos, público, público y la arquitectura de conversión de tu web.
-              </p>
+          <div class="testimonial-content bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl transition-all duration-300 hover:border-[#00F2FF]/50 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 w-full">
+            <!-- Testimonial text -->
+            <p class="testimonial-text text-base md:text-lg lg:text-xl font-bold mb-8 text-[#00F2FF] leading-tight text-center"
+               style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);">
+              "Excelente servicio. Eficiente y muy dispuestos. Muy rápidos al responder cada una de mis dudas o consultas. El trabajo lo realizaron con mucha puntualidad y con buena calidad."
+            </p>
+
+            <!-- Author info -->
+            <div class="author-info flex items-center gap-4">
+              <!-- Company logo -->
+              <div class="author-image w-24 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 p-2">
+                <img src="/images/pokelanlogo.webp" alt="Pokelan Logo" class="w-full h-full object-contain" />
+              </div>
+              <!-- Author name and company -->
+              <div class="author-details">
+                <h4 class="author-name text-[#F5F5F5] font-semibold text-lg" style="font-family: 'Inter', sans-serif;">
+                  Isabella F.
+                </h4>
+                <p class="author-company text-[#F5F5F5]/70 text-sm" style="font-family: 'Inter', sans-serif;">
+                  Directora de Marketing, Pokelan
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Flecha 1 → 2 -->
-        <div class="arrow arrow-1-2 hidden md:flex items-center justify-center flex-shrink-0 px-4">
-          <svg class="w-12 h-6 text-[#FF00E5]" fill="none" stroke="currentColor" viewBox="0 0 48 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36 12H6m30 0l-6-6m6 6l-6 6"></path>
-          </svg>
-        </div>
 
-        <!-- Paso 2: Diseño & Desarrollo -->
-        <div class="roadmap-step step-2 relative flex-shrink-0">
-          <!-- Ícono flotante -->
-          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
-            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#FF00E5]/50 rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#FF00E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-              </svg>
-            </div>
-          </div>
-          
+        <!-- Testimonio 2 -->
+        <div class="testimonial-card testimonial-2 relative flex-shrink-0 flex-1">
           <!-- Tarjeta principal -->
-          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#FF00E5]/50 hover:shadow-[0_0_30px_rgba(255,0,229,0.3)] hover:scale-105 w-full md:w-80">
-            <div class="text-center">
-              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
-                  style="font-family: 'Monument Extended', sans-serif;">
-                2. <span class="text-[#FF00E5]" style="text-shadow: 0 0 20px rgba(255, 0, 229, 0.6);">DISEÑO & DESARROLLO</span>
-              </h3>
-              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
-                 style="font-family: 'Inter', sans-serif;">
-                Creamos la interfaz, programamos funcionalidades y optimizamos para resultados.
-              </p>
+          <div class="testimonial-content bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl transition-all duration-300 hover:border-[#FF00E5]/50 hover:shadow-[0_0_30px_rgba(255,0,229,0.3)] hover:scale-105 w-full">
+            <!-- Testimonial text -->
+            <p class="testimonial-text text-base md:text-lg lg:text-xl font-bold mb-8 text-[#FF00E5] leading-tight text-center"
+               style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 10px rgba(255, 0, 229, 0.3);">
+              "Estoy muy conforme con el trabajo. Fueron muy profesionales en todo momento y el producto cumple 100% con lo solicitado. Los recomiendo absolutamente."
+            </p>
+
+            <!-- Author info -->
+            <div class="author-info flex items-center gap-4">
+              <!-- Company logo -->
+              <div class="author-image w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 p-2">
+                <img src="/images/LOGO-E-ISOTIPO-06.png" alt="LEDpoint Logo" class="w-full h-full object-contain" />
+              </div>
+              <!-- Author name and company -->
+              <div class="author-details">
+                <h4 class="author-name text-[#F5F5F5] font-semibold text-lg" style="font-family: 'Inter', sans-serif;">
+                  Paulo Aranguren
+                </h4>
+                <p class="author-company text-[#F5F5F5]/70 text-sm" style="font-family: 'Inter', sans-serif;">
+                  CEO, LEDpoint
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Flecha 2 → 3 -->
-        <div class="arrow arrow-2-3 hidden md:flex items-center justify-center flex-shrink-0 px-4">
-          <svg class="w-12 h-6 text-[#9D4EDD]" fill="none" stroke="currentColor" viewBox="0 0 48 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36 12H6m30 0l-6-6m6 6l-6 6"></path>
-          </svg>
-        </div>
 
-        <!-- Paso 3: Lanzamiento & Crecimiento -->
-        <div class="roadmap-step step-3 relative flex-shrink-0">
-          <!-- Ícono flotante -->
-          <div class="step-icon absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
-            <div class="icon-container w-16 h-16 bg-[#0D0B1A]/90 backdrop-blur-md border-2 border-[#9D4EDD]/50 rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#9D4EDD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-          </div>
-          
+        <!-- Testimonio 3 -->
+        <div class="testimonial-card testimonial-3 relative flex-shrink-0 flex-1">
           <!-- Tarjeta principal -->
-          <div class="step-card bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 pt-12 rounded-2xl transition-all duration-300 hover:border-[#9D4EDD]/50 hover:shadow-[0_0_30px_rgba(157,78,221,0.3)] hover:scale-105 w-full md:w-80">
-            <div class="text-center">
-              <h3 class="step-title text-xl md:text-2xl font-bold mb-4 text-[#F5F5F5]" 
-                  style="font-family: 'Monument Extended', sans-serif;">
-                3. <span class="text-[#9D4EDD]" style="text-shadow: 0 0 20px rgba(157, 78, 221, 0.6);">LANZAMIENTO & CRECIMIENTO</span>
-              </h3>
-              <p class="step-description text-[#F5F5F5]/80 leading-relaxed text-sm md:text-base" 
-                 style="font-family: 'Inter', sans-serif;">
-                Publicamos tu sitio, medimos resultados e iteramos para escalar tu éxito.
-              </p>
+          <div class="testimonial-content bg-[#0D0B1A]/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl transition-all duration-300 hover:border-[#00F2FF]/50 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 w-full">
+            <!-- Testimonial text -->
+            <p class="testimonial-text text-base md:text-lg lg:text-xl font-bold mb-8 text-[#00F2FF] leading-tight text-center"
+               style="font-family: 'Monument Extended', sans-serif; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);">
+              "Son excelentes profesionales, van mas alla de lo solicitado generando valor agregado para los proyectos, fue un gusto trabajar con ellos y el resultado fue muy bueno."
+            </p>
+
+            <!-- Author info -->
+            <div class="author-info flex items-center gap-4">
+              <!-- Company logo -->
+              <div class="author-image w-24 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 p-2">
+                <img src="/images/terramarte-logo.png" alt="Terramarte Logo" class="w-full h-full object-contain" />
+              </div>
+              <!-- Author name and company -->
+              <div class="author-details">
+                <h4 class="author-name text-[#F5F5F5] font-semibold text-lg" style="font-family: 'Inter', sans-serif;">
+                  Alejandro Gómez
+                </h4>
+                <p class="author-company text-[#F5F5F5]/70 text-sm" style="font-family: 'Inter', sans-serif;">
+                  Líder de Mercadeo, Terramarte
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -132,27 +125,28 @@
 
 <style>
   /* Layout principal con flexbox */
-  .roadmap-flow {
+  .testimonials-flow {
     align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
   }
 
-  .roadmap-step {
+  .testimonial-card {
     position: relative;
-    min-height: 280px; /* Altura mínima consistente */
+    min-height: 350px; /* Altura mínima consistente para testimonios */
   }
 
   /* Tarjetas con altura fija y efectos mejorados */
-  .step-card {
+  .testimonial-content {
     height: 100%;
-    min-height: 280px;
+    min-height: 350px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     overflow: hidden;
   }
 
-  /* Borde de gradiente mejorado - eliminamos el pseudo-elemento duplicado */
-  .step-card::before {
+  /* Borde de gradiente mejorado para testimonios */
+  .testimonial-content::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -167,99 +161,86 @@
     pointer-events: none;
   }
 
-  /* Gradientes específicos para cada tarjeta */
-  .step-1 .step-card:hover::before {
-    background: linear-gradient(135deg, #00F2FF 0%, #9D4EDD 50%, #FF00E5 100%);
+  /* Gradiente para todas las tarjetas de testimonio */
+  .testimonial-card .testimonial-content:hover::before {
+    background: linear-gradient(135deg, #FF00E5 0%, #00F2FF 50%, #9D4EDD 100%);
     opacity: 1;
   }
 
-  .step-2 .step-card:hover::before {
-    background: linear-gradient(135deg, #FF00E5 0%, #9D4EDD 50%, #00F2FF 100%);
-    opacity: 1;
-  }
-
-  .step-3 .step-card:hover::before {
-    background: linear-gradient(135deg, #9D4EDD 0%, #00F2FF 50%, #FF00E5 100%);
-    opacity: 1;
-  }
-
-  /* Efectos para los íconos flotantes */
-  .step-icon .icon-container {
+  /* Efectos para las imágenes de autor */
+  .author-image {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
   }
 
-  .roadmap-step:hover .step-icon .icon-container {
-    transform: translateY(-4px) scale(1.1);
+  .testimonial-card:hover .author-image {
+    transform: scale(1.05);
+    border-color: rgba(255, 0, 229, 0.5);
   }
 
-  .step-1:hover .step-icon .icon-container {
-    border-color: #00F2FF;
-    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.4), 0 0 0 1px rgba(0, 242, 255, 0.2);
-  }
-
-  .step-2:hover .step-icon .icon-container {
-    border-color: #FF00E5;
-    box-shadow: 0 8px 30px rgba(255, 0, 229, 0.4), 0 0 0 1px rgba(255, 0, 229, 0.2);
-  }
-
-  .step-3:hover .step-icon .icon-container {
-    border-color: #9D4EDD;
-    box-shadow: 0 8px 30px rgba(157, 78, 221, 0.4), 0 0 0 1px rgba(157, 78, 221, 0.2);
-  }
-
-  /* Animaciones mejoradas para las flechas */
-  .arrow {
+  /* Animaciones para el texto del testimonio */
+  .testimonial-text {
     transition: all 0.3s ease;
   }
 
-  .arrow svg {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 0 8px currentColor);
+  .testimonial-card:hover .testimonial-text {
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 0, 229, 0.4);
   }
 
-  .arrow:hover svg {
-    transform: scale(1.1) translateX(3px);
-    filter: drop-shadow(0 0 12px currentColor);
-  }
-
-  /* Animaciones de entrada eliminadas para evitar conflictos */
-  .roadmap-step {
+  /* Animaciones de entrada para testimonios */
+  .testimonial-card {
     opacity: 1;
     transform: translateY(0);
   }
 
   /* Responsive improvements */
   @media (max-width: 768px) {
-    .roadmap-flow {
+    .testimonials-flow {
       gap: 2rem;
     }
-    
-    .step-card {
-      margin-top: 2rem;
-      min-height: 240px;
+
+    .testimonial-content {
+      min-height: 300px;
+      padding: 2rem 1.5rem !important;
     }
-    
-    .step-title {
-      font-size: 1.25rem !important;
+
+    .testimonial-text {
+      font-size: 1rem !important;
       line-height: 1.3;
-      margin-bottom: 1rem !important;
+      margin-bottom: 2rem !important;
     }
-    
-    .step-description {
-      font-size: 0.875rem !important;
-      line-height: 1.5;
+
+    .testimonial-1 .author-image,
+    .testimonial-3 .author-image {
+      width: 4rem !important;
+      height: 3rem !important;
     }
-    
-    .step-icon .icon-container {
-      width: 3.5rem !important;
-      height: 3.5rem !important;
+
+    .testimonial-2 .author-image {
+      width: 3rem !important;
+      height: 3rem !important;
     }
-    
-    .step-icon .icon-container svg {
-      width: 1.75rem !important;
-      height: 1.75rem !important;
+
+    .author-name {
+      font-size: 1rem !important;
+    }
+
+    .author-company {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials-flow {
+      padding: 0 2rem;
+    }
+
+    .testimonial-card {
+      max-width: none;
+    }
+
+    .testimonial-content {
+      min-height: 380px;
     }
   }
 
@@ -295,46 +276,46 @@
   }
 
   /* Mejoras para el contenedor principal */
-  .roadmap-container {
+  .testimonials-container {
     padding: 2rem 0;
   }
 
   /* Efectos de hover mejorados */
-  .step-card:hover {
+  .testimonial-content:hover {
     transform: translateY(-5px);
   }
 
-  .step-card {
+  .testimonial-content {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>
 
 <script>
-  console.log('🔧 Roadmap.astro script cargado');
-  
+  console.log('🔧 Testimonials.astro script cargado');
+
   // Verificar que la sección existe
-  const roadmapSection = document.getElementById('roadmap');
-  console.log('📍 Sección roadmap encontrada:', roadmapSection);
-  
-  // Verificar los pasos del roadmap
-  const roadmapSteps = document.querySelectorAll('.roadmap-step');
-  console.log('📋 Pasos del roadmap encontrados:', roadmapSteps.length);
-  
-  roadmapSteps.forEach((step, index) => {
-    console.log(`📋 Paso ${index + 1}:`, step);
+  const testimonialsSection = document.getElementById('testimonios');
+  console.log('📍 Sección testimonios encontrada:', testimonialsSection);
+
+  // Verificar las tarjetas de testimonio
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  console.log('📋 Testimonios encontrados:', testimonialCards.length);
+
+  testimonialCards.forEach((card, index) => {
+    console.log(`📋 Testimonio ${index + 1}:`, card);
   });
-  
-  console.log('✅ Configuración de Roadmap completada');
+
+  console.log('✅ Configuración de Testimonials completada');
 
   // Animaciones GSAP con ScrollTrigger
   document.addEventListener('DOMContentLoaded', function() {
     // Verificar que GSAP esté disponible
     if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
       gsap.registerPlugin(ScrollTrigger);
-      console.log('🎬 GSAP y ScrollTrigger inicializados para Roadmap');
+      console.log('🎬 GSAP y ScrollTrigger inicializados para Testimonials');
 
       // Animación de entrada del título
-      gsap.fromTo("h2", {
+      gsap.fromTo("#testimonios h2", {
         opacity: 0,
         y: 50
       }, {
@@ -343,16 +324,16 @@
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: "#roadmap",
+          trigger: "#testimonios",
           start: "top 80%",
           toggleActions: "play none none reverse"
         }
       });
 
-      // Animación de entrada de los pasos con stagger
-      gsap.fromTo(".roadmap-step", {
+      // Animación de entrada de los testimonios con stagger
+      gsap.fromTo(".testimonial-card", {
         opacity: 0,
-        y: 60,
+        y: 80,
         scale: 0.9
       }, {
         opacity: 1,
@@ -362,28 +343,12 @@
         stagger: 0.2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: "#roadmap",
+          trigger: "#testimonios",
           start: "top 70%",
           toggleActions: "play none none reverse"
         }
       });
 
-      // Animación de las flechas
-      gsap.fromTo(".arrow", {
-        opacity: 0,
-        x: -20
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#roadmap",
-          start: "top 60%",
-          toggleActions: "play none none reverse"
-        }
-      });
 
       // Animación de los elementos de fondo
       gsap.to(".ambient-glow-1", {
@@ -405,9 +370,9 @@
         delay: 2
       });
 
-      console.log('✨ Animaciones GSAP de Roadmap configuradas');
+      console.log('✨ Animaciones GSAP de Testimonials configuradas');
     } else {
-      console.warn('⚠️ GSAP no está disponible para Roadmap');
+      console.warn('⚠️ GSAP no está disponible para Testimonials');
     }
   });
 </script>
